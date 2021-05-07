@@ -21,8 +21,10 @@ app.on('window-all-closed', function () {
 app.on('ready', function () {
     // 创建浏览器窗口。
     Meun.setApplicationMenu(null)
-    mainWindow = new BrowserWindow({ show: false });
-    mainWindow.maximize()
+    mainWindow = new BrowserWindow({ show: false,
+        width: 1200,
+        height: 700 });
+ 
     mainWindow.show()
     // 加载应用的 index
     mainWindow.loadFile("index.html")
