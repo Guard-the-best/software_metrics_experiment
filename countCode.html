@@ -195,8 +195,9 @@
                     type:'post',
                     async: false,//使用同步的方式,true为异步方式
                     processData: false,
+                    contentType:"application/octet-stream",
                     data: data,
-                    contentType:"application/xml",
+                    // contentType:"text/plain",
                     success:function(data){
                         console.log(data)
                         for(var i=0;i<data.length;i++){
