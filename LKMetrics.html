@@ -37,41 +37,51 @@
   <div class="wrapper">
 
 
-    <div data-active-color="white" data-background-color="sublime-vivid" data-image="app-assets/img/sidebar-bg/08.jpg"
-      class="app-sidebar">
-      <div class="sidebar-header">
-        <div class="logo clearfix"><a href="index.html" class="logo-text float-left">
-            <span
-              class="text align-middle">软件度量实验</span>
-          </a><a id="sidebarToggle" href="javascript:;" class="nav-toggle d-none d-sm-none d-md-none d-lg-block"><i
-              data-toggle="expanded" class="ft-disc toggle-icon"></i></a><a id="sidebarClose" href="javascript:;"
-            class="nav-close d-block d-md-block d-lg-none d-xl-none"><i class="ft-circle"></i></a></div>
-      </div>
-      <div class="sidebar-content">
-        <div class="nav-container">
-          <ul id="main-menu-navigation" data-menu="menu-navigation" class="navigation navigation-main">
-            <li><a href="index.html" ><i class="icon-equalizer"></i>首页</a>
-            </li>
-            <li><a href="FPMetrics.html"><i class="icon-speedometer"></i>功能点度量</a>
-            </li>
-            <li><a href="UCPMetrics.html"><i class="icon-grid"></i>用例点度量</a>
-            </li>
-            <li ><a href="VG.html" ><i class="icon-puzzle"></i>圈复杂度度量</a>
-            </li>
-            <li><a href="CKMetrics.html" ><i class="icon-pie-chart"></i>面向对象CK度量</a>
-            </li>
-            <li   class="active"><a href="LKMetrics.html"><i class="icon-bar-chart"></i>面向对象LK度量</a>
-            </li>
-            <li  ><a href="countCode.html" ><i class="icon-support"></i>代码行度量</a>
-            </li>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="#">Navbar</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="index.html">首页 <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item dropdown  active">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false">
+              需求分析
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="UCPMetrics.html">用例点</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item  disabled" href="FPMetrics.html">功能点度量</a>
+            </div>
+          </li>
+          <li class="nav-item dropdown active">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false">
+              详细设计
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="LKMetrics.html">面向对象LK度量</a>
+              <a class="dropdown-item" href="CKMetrics.html">面向对象CK度量</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item disabled" href="VG.html" >圈复杂度度量</a>
+            </div>
+          </li>
+          <li class="nav-item  active ">
+            <a class="nav-link" href="countCode.html" tabindex="-1">编码实现</a>
+          </li>
         </ul>
-        </div>
+        <form class="form-inline my-2 my-lg-0">
+          <input class="form-control mr-sm-2" type="search" placeholder="Search..." aria-label="Search">
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">搜索</button>
+        </form>
       </div>
-      <div class="sidebar-background"></div>
-    </div>
+    </nav>
 
     <div class="main-panel">
-      <div class="main-content">
+      <div>
         <div class="content-wrapper">
           <div class="container-fluid">
 
