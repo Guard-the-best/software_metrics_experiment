@@ -106,7 +106,7 @@
                                     <span class="input-group-text">上传文件</span>
                                   </div>
                                   <div class="custom-file">
-                                    <input type="file" class="custom-file-input" id="inputFile"  webkitdirectory>
+                                    <input type="file" class="custom-file-input" id="inputFile">
                                     <label class="custom-file-label" for="inputGroupFile01" id="fileName">点击选择文件夹上传代码</label>
                                   </div>
                                 </div>
@@ -160,14 +160,16 @@
   <!-- END PAGE LEVEL JS-->
 
   <script>
+        var data;
+
         $(document).ready(function (){ 
-          $("#inputFile").change(function(e){
-            var files = e.target.files;  
-            $("#fileName").text("已选择文件：")
-            for (var i=0;i<files.length;i++)
-            {
-                $("#fileName").text($("#fileName").text()+" "+ files[i].name)
-            }
+          $("#inputFile").change(function(){
+              $("#fileName").text("已选择文件："+$("#inputFile")[0].files[0].name);
+              var reader = new FileReader();
+                reader.readAsText($("#inputFile")[0].files[0], "UTF-8");//读取文件 
+                reader.onload = function(evt){ //读取完文件之后会回来这里
+                    data =  evt.target.result;
+                }
           });
 
             $("#checkBtn").click(function () {
@@ -176,6 +178,7 @@
                     type:'post',
                     async: false,//使用同步的方式,true为异步方式
                     processData: false,
+                    data: data,
                     contentType:"application/xml",
                     success:function(data){
                         console.log(data)
