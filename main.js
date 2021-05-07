@@ -1,5 +1,6 @@
-const { app, BrowserWindow } = require('electron')
+const { app, BrowserWindow, globalShortcut} = require('electron')
 const electron = require('electron')
+ 
 const Meun = electron.Menu
 
 
@@ -16,11 +17,13 @@ app.on('window-all-closed', function () {
     }
 });
 
+
 // 当 Electron 完成了初始化并且准备创建浏览器窗口的时候
 // 这个方法就被调用
 app.on('ready', function () {
     // 创建浏览器窗口。
     Meun.setApplicationMenu(null)
+
     mainWindow = new BrowserWindow({ show: false,
         width: 1200,
         height: 700 });
@@ -28,9 +31,10 @@ app.on('ready', function () {
     mainWindow.show()
     // 加载应用的 index
     mainWindow.loadFile("index.html")
-
-    // 打开开发工具
-    // mainWindow.openDevTools();
+    globalShortcut.register('F11', function(){
+        //...
+        mainWindow.webContents.openDevTools({mode:'right'});
+      });
 
     // 当 window 被关闭，这个事件会被发出
     mainWindow.on('closed', function () {
@@ -40,3 +44,10 @@ app.on('ready', function () {
         mainWindow = null;
     });
 });
+
+// app.whenReady().then(() => {
+//     globalShortcut.register('F12', () => {
+//       // 打开开发工具
+//         mainWindow.openDevTools();
+//     })
+//   });

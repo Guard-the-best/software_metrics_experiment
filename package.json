@@ -1,7 +1,7 @@
 {
-  "name": "first_electron_try",
+  "name": "software_metric",
   "version": "1.0.0",
-  "description": "哈哩哈哩",
+  "description": "自动化软件度量工具",
   "main": "main.js",
   "scripts": {
     "start": "electron-forge start",
